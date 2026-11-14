@@ -1,0 +1,13 @@
+﻿@model StudentCourseManagementSystem.Models.Course
+
+<div class="main-card" style="max-width: 480px;">
+    <h2>Delete Course</h2>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="CourseId" />
+        <div class="form-group" style="margin-bottom:18px;">
+            <strong>Are you sure you want to delete <span class="highlight">@Model.Name</span>?</strong>
+        </div>
+        <button type="submit" class="btn btn-danger mt-2">Delete</button>
+        <a href="/Courses" class="btn btn-secondary mt-2">Cancel</a>
+    </form>
+</div>

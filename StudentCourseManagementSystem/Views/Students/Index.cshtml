@@ -1,0 +1,42 @@
+﻿@model IEnumerable<StudentCourseManagementSystem.Models.Student>
+
+<div class="main-card">
+    <div class="main-card-header">
+        <h2>Students</h2>
+        <a class="btn btn-success" href="/Students/Create">Add Student</a>
+    </div>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Courses</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.Email</td>
+                    <td>
+                        @if (student.StudentCourses.Any())
+                        {
+                            @string.Join(", ", student.StudentCourses.Select(sc => sc.Course.Name))
+                        }
+                        else
+                        {
+                            <span class="muted-text">No courses assigned</span>
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/Students/Edit/@student.StudentId">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/Students/Delete/@student.StudentId">Delete</a>
+                        <a class="btn btn-warning btn-sm" href="/Students/AssignCourses/@student.StudentId">Assign Courses</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

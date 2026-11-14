@@ -1,0 +1,20 @@
+﻿@model StudentCourseManagementSystem.Models.Course
+@{
+    ViewData["Title"] = "Edit Course";
+}
+<h2>Edit Course</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="CourseId" />
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="/Courses" class="btn btn-secondary">Cancel</a>
+</form>

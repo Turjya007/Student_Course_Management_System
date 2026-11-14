@@ -1,0 +1,21 @@
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+**/bin/
+**/obj/
+
+# Test results
+**/TestResults/
+
+# Environment and secrets
+.env
+.env.*
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3

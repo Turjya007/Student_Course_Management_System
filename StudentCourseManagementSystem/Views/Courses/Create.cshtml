@@ -1,0 +1,19 @@
+﻿@model StudentCourseManagementSystem.Models.Course
+
+<div class="main-card" style="max-width: 480px;">
+    <h2>Create Course</h2>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label>Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+        <a href="/Courses" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
